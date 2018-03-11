@@ -1,5 +1,5 @@
 <?php
 require("lib.php");
-sleep(0);
-echo (timeLapsed());
+sleep(01);
+echo (number_format( timeLapsed()*1000, 4 ) . "ms" );
  ?>

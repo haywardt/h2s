@@ -3,20 +3,45 @@ HTML2SQL bridge
 
 Generation Five!
 
+Is a javascript or php preprocessor that converts template language into html/css/javascript.
+
+	Its a set of server services(get view:cols, update:cols,index,value)
+	returns the number of rows: starting at page: of the return set.
+	The preprocessor consists of a set of regex expressions
+
+----
+
 Made for use with an embedded WYSIWYG editor. Controls each have an associated class. Parameters are stored in data- tag value
 
 Components
 ------- -------------------------------
 
-table	sets the name of the table or view for all following columns until the next table tag
+view	{view:viewname}
 
-row		identifies the div that is to be replicated for each row in the result 
+		sets the name of the table or view for all following columns until the next table tag
 
-col		sets the name of the column from which to retrieve the data
+row		<td {row:pageSize}
+		identifies the div that is to be replicated for each row in the result 
 
-	edit	makes the col updatable 
+page   	{page:pageNumber}
+		identifies the page number
 
-	auto	makes the col updatable and autocomplete
+col		{col:columnName}
+		sets the name of the column from which to retrieve the data
+		
+edit	{edit:colunmName}
+		editable colunm
+
+auto	{auto:columnName}
+		autocomplete item
+		
+exec	{timer} execution timer
+
+
+
+The first iteration could be blocks of code interspersed with the {:} that are replaced with inline code processed by either php or javascript.
+The blocks are embedded in HTML but it is possible that the entire interface will consist of blocks at some point. 
+
 
 	
 	
@@ -35,11 +60,4 @@ ToDo::
 	
 
 3/10/2018 created build environment (github, atom, xampp)
-
-c3a279ce2cb71b6be3225cce340f92f7  ckeditor4.html
-1940720278742495d5f23ded69be4bd1  ckeditor5.html
-46334a6851fe88faf87b6a9c78200d73  index.php
-06b9b3b17c7ad3d553421c972a6a327f  lib.php
-2ec44667f451c92465189b612488b18e  README.md
-
 

@@ -1,0 +1,19 @@
+{view:customers lpp:25} 	limit 25, page number defined by class=page value=990. used inside a tag only.
+{view:customers}  			maximum solution set
+
+							POST(query.php,view,pg,lpp,columns)
+							onResponse(
+								function (response)
+									hide this template element row
+									for each response row
+										clone the row template element
+										
+										add data-index, contenteditable and onchange action to editable elements <div {edit:columnName}
+											or
+										map response into this element by substitution of {columnName} inside inner html
+										
+								}
+
+(edit:columnName}			make this element an editable (goes inside the tag as the first element after the tag type <td {test}
+{col:columnName}			display-only static substitution anywhere inside innerhtml of a view tag
+

@@ -8,12 +8,16 @@
 									for each response row
 										clone the row template element
 										
-										add data-index, contenteditable and onchange action to editable elements <div {edit:columnName}
+										add data-index, contentEditable and onchange action to editable elements <div {edit:columnName}
 											or
 										map response into this element by substitution of {columnName} inside inner html
 										
 								}
 
 (edit:columnName}			make this element an editable (goes inside the tag as the first element after the tag type <td {test}
-{col:columnName}			display-only static substitution anywhere inside innerhtml of a view tag
+
+{{columnName}}			display-only static substitution anywhere inside innerHTML of a view tag
+{col:columnName}
+
+{h2s:"cool optional title"}					creates the heading section where initialization code is run
 

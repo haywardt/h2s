@@ -1,9 +1,22 @@
 # h2s
 HTML2SQL bridge
 
+ToDo:
+	Write the first test. The demo page.
+	A CKEditor field
+	
+	
 Generation Five!
 
-Is a javascript or php preprocessor that converts template language into html/css/javascript.
+Is a php and javascript preprocessor that converts template language into html/css/javascript.
+
+First convert {{component:}} to php statements, then include this php to execute it. The code is sent to the client where javascript runs a substitution of its own
+
+file.h2 ----- server side substitution ----> file.php
+
+file.php ------ included ------------------> headers HTML, Javascript, CSS to the client
+
+HTML ----------- Javascript sub engine ----> HTML with javascript runs when body or inner elements are updated.
 
 	Its a set of server services(get view:cols, update:cols,index,value)
 	returns the number of rows: starting at page: of the return set.
@@ -27,19 +40,23 @@ page   	{page:pageNumber}
 		identifies the page number
 
 col		{col:columnName}
+		or {{columnName}}
 		sets the name of the column from which to retrieve the data
 		
 edit	{edit:colunmName}
 		editable colunm
 
 auto	{auto:columnName}
-		autocomplete item
+		autocomplete item. adds the html, javascript, and 
 		
-exec	{timer} execution timer
+exec	{runtime} execution timer
+
+index	{index} index of this row
 
 
+The first iteration could be blocks of code interspersed with the {} that are replaced with inline code processed by javascript.
 
-The first iteration could be blocks of code interspersed with the {:} that are replaced with inline code processed by either php or javascript.
+The substitution process takes place on the body element at document.ready. Substitution of the row and cell items takes place at http.response.  
 The blocks are embedded in HTML but it is possible that the entire interface will consist of blocks at some point. 
 
 

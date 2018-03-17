@@ -1,5 +1,5 @@
 /* -------- Generation:Five --------
-{{col}} for static replacement directly after page
+{{col}} for static replacement directly after page ready
 
 	{edit:col} replaces with HTML required for an edit field
 	{view:name,lpp} returns lpp results starting at {Page}
@@ -130,7 +130,9 @@ function updateSql(){
 //
 //	replace all {} elements using regex
 function replaceStatic(){
-	
+	pattern = /{{exectime}}/
+	var k = $(body).innerHTML
+	$('body').innerHTML = regex()
 }
 //	replace the HTML inside tags using regex
 function replaceElements(){

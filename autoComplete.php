@@ -3,9 +3,9 @@
 		 width:100%;
 	"
 >
-  <option value="AL">Alabama</option>
-  <option value="TX">Texas</option>
-  <option value="WY">Wyoming</option>
+  <option>Size:8</option>
+  <option>Local Pickup:Pensacola</option>
+  <option>Shipping available</option>
 </select>
 <script>
 $(document).ready(function(){

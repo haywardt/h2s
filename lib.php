@@ -3,7 +3,7 @@ timeLapsed();
 session_start();
 
 function PDOConnect(){ 								// PDO Connect returns the PDO object
-	$host = '127.0.0.1';
+	$host = 'localhost';
 	$db   = 'test';
 	$user = 'root';
 	$pass = '';
@@ -20,7 +20,10 @@ function PDOConnect(){ 								// PDO Connect returns the PDO object
 };
 
 function PDOGet($view,$columns,$start,$limit){		// get a view for display
-	
+	require("timeLapsed.php");
+	$db = PDOConnect();								// open the connection. 
+	$db = PDOConnect();
+	var_dump($db);
 };
 
 function PDOPut($view,$column,$index,$value){		// put a value, into a table
